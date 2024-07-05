@@ -138,7 +138,7 @@ class CourseListingFrame extends JFrame {
                     course.getCode() + " - " + course.getTitle() + " (Slots: " + (course.getCapacity() - 1) + ")\n");
         }
 
-        add(courseListArea);
+        add(new JScrollPane(courseListArea));
         setVisible(true);
     }
 }
@@ -147,10 +147,10 @@ class StudentRegistrationFrame extends JFrame {
     private JComboBox<String> studentComboBox;
     private JComboBox<String> courseComboBox;
     private JButton registerButton;
-    private CourseDatabase courseDatabase; // Added
+    private CourseDatabase courseDatabase;
 
     public StudentRegistrationFrame(StudentDatabase studentDatabase, CourseDatabase courseDatabase) {
-        this.courseDatabase = courseDatabase; // Added
+        this.courseDatabase = courseDatabase;
         setTitle("Student Registration");
         setSize(300, 150);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -317,32 +317,29 @@ public class StudentCourseRegistrationSystem {
         courseDatabase.addCourse(new Course("CS110", "Software Engineering", "Introduction to Software Engineering", 25, "TTH 9:00 AM"));
 
         StudentDatabase studentDatabase = new StudentDatabase();
-        studentDatabase.addStudent(new Student("1001", "Vishwateja"));
-        studentDatabase.addStudent(new Student("1002", "Vivek"));
-        studentDatabase.addStudent(new Student("1003", "Arnav"));
-        studentDatabase.addStudent(new Student("1004", "Pavan"));
-        studentDatabase.addStudent(new Student("1005", "Goutham"));
-        studentDatabase.addStudent(new Student("1006", "Rohith"));
-        studentDatabase.addStudent(new Student("1007", "Vineeth"));
-        studentDatabase.addStudent(new Student("1008", "Anurath"));
-        studentDatabase.addStudent(new Student("1009", "Praneeth"));
-        studentDatabase.addStudent(new Student("1010", "Charan"));
-        studentDatabase.addStudent(new Student("1011", "Chaitanya"));
-        studentDatabase.addStudent(new Student("1012", "Anurath"));
-        studentDatabase.addStudent(new Student("1013", "Akshith"));
-        studentDatabase.addStudent(new Student("1014", "Ramcharan"));
-        studentDatabase.addStudent(new Student("1015", "Snehal"));
-        studentDatabase.addStudent(new Student("1016", "Abhiram"));
-        studentDatabase.addStudent(new Student("1017", "Rushik"));
-        studentDatabase.addStudent(new Student("1018", "Sujith"));
-        studentDatabase.addStudent(new Student("1019", "Avinash"));
-        studentDatabase.addStudent(new Student("1020", "Nipun"));
-        
-
+        studentDatabase.addStudent(new Student("2001", "Rahul"));
+        studentDatabase.addStudent(new Student("2002", "Priya"));
+        studentDatabase.addStudent(new Student("2003", "Amit"));
+        studentDatabase.addStudent(new Student("2004", "Sneha"));
+        studentDatabase.addStudent(new Student("2005", "Vikram"));
+        studentDatabase.addStudent(new Student("2006", "Kavita"));
+        studentDatabase.addStudent(new Student("2007", "Rajesh"));
+        studentDatabase.addStudent(new Student("2008", "Meera"));
+        studentDatabase.addStudent(new Student("2009", "Arun"));
+        studentDatabase.addStudent(new Student("2010", "Neha"));
+        studentDatabase.addStudent(new Student("2011", "Ravi"));
+        studentDatabase.addStudent(new Student("2012", "Suman"));
+        studentDatabase.addStudent(new Student("2013", "Anjali"));
+        studentDatabase.addStudent(new Student("2014", "Gaurav"));
+        studentDatabase.addStudent(new Student("2015", "Pooja"));
+        studentDatabase.addStudent(new Student("2016", "Rakesh"));
+        studentDatabase.addStudent(new Student("2017", "Deepika"));
+        studentDatabase.addStudent(new Student("2018", "Manish"));
+        studentDatabase.addStudent(new Student("2019", "Swati"));
+        studentDatabase.addStudent(new Student("2020", "Sanjay"));
 
         CourseListingFrame courseListingFrame = new CourseListingFrame(courseDatabase);
-        StudentRegistrationFrame studentRegistrationFrame = new StudentRegistrationFrame(studentDatabase,
-                courseDatabase);
+        StudentRegistrationFrame studentRegistrationFrame = new StudentRegistrationFrame(studentDatabase, courseDatabase);
         CourseRemovalFrame courseRemovalFrame = new CourseRemovalFrame(studentDatabase, courseDatabase);
     }
 }
