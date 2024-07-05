@@ -27,7 +27,7 @@ public class Quiz extends JFrame {
             {"Dr. B.R. Ambedkar", "Dr. Rajendra Prasad", "Jawaharlal Nehru", "Sardar Vallabhbhai Patel"}
     };
     private int[] correctAnswers = {0, 1, 1, 1, 1};
-
+ 
     public Quiz() {
         setTitle("Quiz Application");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
