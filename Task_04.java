@@ -13,16 +13,20 @@ public class Quiz extends JFrame {
     private Timer timer;
 
     private String[] questions = {
-            "How many bones are in the body of an adult human??",
-            "What is 5 + 3?",
-            "What is the largest planet in our solar system?"
+            "Which Article of the Indian Constitution deals with the 'Right to Equality'?",
+            "The Directive Principles of State Policy in the Indian Constitution were borrowed from which country's constitution?",
+            "Which of the following is the largest tributary of the Indus River?",
+            "In which year was the Planning Commission of India established?",
+            "Who among the following was the President of the Constituent Assembly of India?"
     };
     private String[][] choices = {
-            {"330", "218", "206", "250"},
-            {"7", "8", "9", "6"},
-            {"Jupiter", "Earth", "Mars", "Venus"}
+            {"Article 14-18", "Article 19-22", "Article 23-24", "Article 25-28"},
+            {"USA", "Ireland", "UK", "Canada"},
+            {"Chenab", "Sutlej", "Jhelum", "Beas"},
+            {"1947", "1950", "1952", "1965"},
+            {"Dr. B.R. Ambedkar", "Dr. Rajendra Prasad", "Jawaharlal Nehru", "Sardar Vallabhbhai Patel"}
     };
-    private int[] correctAnswers = {2, 1, 0};
+    private int[] correctAnswers = {0, 1, 1, 1, 1};
 
     public Quiz() {
         setTitle("Quiz Application");
@@ -38,7 +42,6 @@ public class Quiz extends JFrame {
         ButtonGroup buttonGroup = new ButtonGroup();
         for (int i = 0; i < 4; i++) {
             options[i] = new JRadioButton();
-            options[i].setText(choices[currentQuestionIndex][i]);
             buttonGroup.add(options[i]);
             optionsPanel.add(options[i]);
         }
